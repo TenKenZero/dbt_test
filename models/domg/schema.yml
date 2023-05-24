@@ -1,0 +1,121 @@
+version: 2
+
+sources:
+  - name: public
+    tables:
+    - name: dealers
+
+models:
+- name: dealers
+  columns:
+    - name: dealerid
+    - name: businessname
+    - name: state
+    - name: city
+    - name: crmcompanyid
+
+- name: stg_dealers
+  columns:
+    - name: dealerid
+    - name: businessname
+    - name: state
+    - name: city
+    - name: crmcompanyid
+
+- name: logs    
+  columns:
+    - name: id
+    - name: startedat
+    - name: message
+
+- name: datafiles    
+  columns:
+    - name: datafileid
+    - name: dataproviderid
+    - name: filename
+    - name: isprocessed
+    - name: createdat
+    - name: processedat
+
+- name: dataproviders    
+  columns:
+    - name: dataproviderid
+    - name: dataprovidername
+    - name: azurecontainername    
+    - name: createdat
+    - name: randomid
+    - name: enabled
+    - name: host
+    - name: username
+    - name: password
+    - name: port
+
+- name: inventory    
+  columns:
+    - name: genericmasterid
+    - name: dataproviderid
+    - name: address    
+    - name: body_style
+    - name: city
+    - name: country
+    - name: dealer_name
+    - name: username
+    - name: dealerid
+    - name: make
+    - name: model
+    - name: price
+    - name: state
+    - name: vin
+    - name: year
+    - name: make
+
+- name: inventory_sold
+  columns:
+    - name: genericmasterid
+    - name: dataproviderid
+    - name: address    
+    - name: body_style
+    - name: city
+    - name: country
+    - name: dealer_name
+    - name: username
+    - name: dealerid
+    - name: make
+    - name: model
+    - name: price
+    - name: state
+    - name: vin
+    - name: year
+    - name: make
+
+- name: inventory_unique
+  columns:
+    - name: genericmasterid
+    - name: dataproviderid
+    - name: address    
+    - name: body_style
+    - name: city
+    - name: country
+    - name: dealer_name
+    - name: username
+    - name: dealerid
+    - name: make
+    - name: model
+    - name: price
+    - name: state
+    - name: vin
+    - name: year
+    - name: make        
+
+- name: presets
+  columns:
+    - name: presetid
+    - name: dealerid
+    - name: presetname
+    - name: tags 
+    - name: filter_values
+    - name: recordrequest
+    - name: sqlquery
+    - name: createdat
+    - name: sqlquerysales    
+    - name: sqlquerysservice
